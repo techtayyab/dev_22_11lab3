@@ -1,10 +1,11 @@
 import sys
 
-temp = float(input("Enter the temperature in °C: "))
+if len(sys.argv) < 2:
+    print("usage: python temp.py <temperature_in_C>")
+    sys.exit(1)
 
-if temp < 15:
-    print("Cold")
-elif temp <= 30:
-    print("Normal")
-else:
-    print("Hot")
+temp = float(sys.argv[1])
+
+fahrenheit = (temp * 9/5) + 32
+print("Temperature in Celsius:", temp)
+print("Temperature in Fahrenheit:", fahrenheit)
